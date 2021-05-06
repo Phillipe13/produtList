@@ -12,3 +12,4 @@ const Tag = props => (
 );
 
 export { Tag };
+
