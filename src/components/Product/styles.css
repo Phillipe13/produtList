@@ -10,3 +10,18 @@
       margin: 0;
     
 }
+
+.product_header {
+
+    display: flex;
+    justify-content: space-between;
+
+}
+.product button {
+
+    background: white;
+    border: solid 1px #eee;
+    padding: 5px 10px;
+    font-size: 20px;
+
+    }
