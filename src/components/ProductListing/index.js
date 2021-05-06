@@ -1,15 +1,21 @@
 import React from "react";
-//Lista de produtos
+// components
+import { Product } from "../Product";
 
 const ProductListing = props => {
-    const { products } = props;
-    return (
-        <div>
-            { products.map((product, key) => (
-                <div key={product.name}>{product.name}</div>
-                )
-            )}
-        </div>
-    );
+  const { products, selectedTag } = props;
+
+  const filteredProduct = selectedTag
+    ? products.filter(product => product.tags.includes(selectedTag))
+    : products;
+  return (
+    <div>
+      {filteredProduct &&
+        filteredProduct.length &&
+        filteredProduct.map((product, key) => (
+          <Product key={`${product.name}-${key}`} product={product} />
+        ))}
+    </div>
+  );
 };
 export { ProductListing };
